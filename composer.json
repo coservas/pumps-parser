@@ -1,0 +1,40 @@
+{
+    "name": "coservas/pumps-parser",
+    "authors": [
+        {
+            "name": "Sergei Vasilev",
+            "email": "vasiliev05@gmail.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "symfony/console": "^5.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^9.0"
+    },
+    "scripts": {
+        "fix": [
+            "composer php-cs-fixer ./src",
+            "composer php-cs-fixer ./tests"
+        ],
+        "php-cs-fixer": "./vendor/bin/php-cs-fixer fix --show-progress=dots --rules=@PSR2",
+        "test": "./vendor/bin/phpunit --colors=always ./tests"
+    }
+}
